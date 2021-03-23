@@ -82,8 +82,9 @@ env_trns.xy <-as.data.frame(cont.env.CP, row.names=NULL, optional=FALSE, xy=TRUE
 ##RCP45 2050
 mr.50.45.t <- load_layers( layercodes = c("WC_bio1_mr45_2050", "WC_bio5_mr45_2050", "WC_bio7_mr45_2050", "WC_bio12_mr45_2050", "WC_bio15_mr45_2050") , equalarea=FALSE, rasterstack=TRUE)
 cc.50.45.t <- load_layers( layercodes = c("WC_bio1_cc45_2050", "WC_bio5_cc45_2050", "WC_bio7_cc45_2050", "WC_bio12_cc45_2050", "WC_bio15_cc45_2050") , equalarea=FALSE, rasterstack=TRUE)
+he.50.45.t <- load_layers( layercodes = c("WC_bio1_he45_2050", "WC_bio5_he45_2050", "WC_bio7_he45_2050", "WC_bio12_he45_2050", "WC_bio15_he45_2050") , equalarea=FALSE, rasterstack=TRUE)
 
-t.50.45 <- overlay(mr.50.45.t, cc.50.45.t, fun=mean)
+t.50.45 <- overlay(mr.50.45.t, cc.50.45.t, he.50.45.t, fun=mean)
 
 o.50.45 <- load_layers( layercodes = c("BO2_RCP45_2050_salinityrange_bdmin", "BO2_RCP45_2050_salinitymean_bdmin", "BO2_RCP45_2050_temprange_bdmin", "BO2_RCP45_2050_tempmean_bdmin") , equalarea=FALSE, rasterstack=TRUE)
 chl.50.45 <- load_layers("BO2_RCP45_2050_chlomean_bdmin")
@@ -96,8 +97,9 @@ env.50.45 <- stack(a.mid.2, o.mid.2, chl.mid.2)
 ##RCP85 CCSM4
 mr.50.85.t <- load_layers( layercodes = c("WC_bio1_mr85_2050", "WC_bio5_mr85_2050", "WC_bio7_mr85_2050", "WC_bio12_mr85_2050", "WC_bio12_mr85_2050") , equalarea=FALSE, rasterstack=TRUE)
 cc.50.85.t <- load_layers( layercodes = c("WC_bio1_cc85_2050", "WC_bio5_cc85_2050", "WC_bio7_cc85_2050", "WC_bio12_cc85_2050", "WC_bio12_cc85_2050") , equalarea=FALSE, rasterstack=TRUE)
+he.50.85.t <- load_layers( layercodes = c("WC_bio1_he85_2050", "WC_bio5_he85_2050", "WC_bio7_he85_2050", "WC_bio12_he85_2050", "WC_bio12_he85_2050") , equalarea=FALSE, rasterstack=TRUE)
 
-t.50.85 <- overlay(mr.50.85.t, cc.50.85.t, fun=mean)
+t.50.85 <- overlay(mr.50.85.t, cc.50.85.t, he.50.85.t, fun=mean)
 
 o.50.85 <- load_layers( layercodes = c("BO2_RCP85_2050_salinityrange_bdmin", "BO2_RCP85_2050_salinitymean_bdmin", "BO2_RCP85_2050_temprange_bdmin", "BO2_RCP85_2050_tempmean_bdmin") , equalarea=FALSE, rasterstack=TRUE)
 chl.50.85 <- load_layers("BO2_RCP85_2050_chlomean_bdmin")
@@ -113,8 +115,9 @@ env.50 <- merge(env.50.45, env.50.85)
 ## RCP 45
 mr.90.45.t <- load_layers( layercodes = c("WC_bio1_mr45_2070", "WC_bio5_mr45_2070", "WC_bio7_mr45_2070", "WC_bio12_mr45_2070", "WC_bio15_mr45_2070") , equalarea=FALSE, rasterstack=TRUE)
 cc.90.45.t <- load_layers( layercodes = c("WC_bio1_cc45_2070", "WC_bio5_cc45_2070", "WC_bio7_cc45_2070", "WC_bio12_cc45_2070", "WC_bio15_cc45_2070") , equalarea=FALSE, rasterstack=TRUE)
+he.90.45.t <- load_layers( layercodes = c("WC_bio1_he45_2070", "WC_bio5_he45_2070", "WC_bio7_he45_2070", "WC_bio12_he45_2070", "WC_bio15_he45_2070") , equalarea=FALSE, rasterstack=TRUE)
 
-t.90.45 <- overlay(mr.90.45.t, cc.90.45.t, fun=mean)
+t.90.45 <- overlay(mr.90.45.t, cc.90.45.t, he.90.45.t, fun=mean)
 
 o.90.45 <- load_layers( layercodes = c("BO2_RCP45_2100_salinityrange_bdmin", "BO2_RCP45_2100_salinitymean_bdmin", "BO2_RCP45_2100_temprange_bdmin", "BO2_RCP45_2100_tempmean_bdmin") , equalarea=FALSE, rasterstack=TRUE)
 chl.90.45 <- load_layers("BO2_RCP45_2100_chlomean_bdmin")
@@ -127,8 +130,9 @@ env.90.45 <- stack(a.mid.2, o.mid.2, chl.mid.2)
 ## RCP 85
 mr.90.85.t <- load_layers( layercodes = c("WC_bio1_mr85_2070", "WC_bio5_mr85_2070", "WC_bio7_mr85_2070", "WC_bio12_mr85_2070", "WC_bio15_mr85_2070") , equalarea=FALSE, rasterstack=TRUE)
 cc.90.85.t <- load_layers( layercodes = c("WC_bio1_cc85_2070", "WC_bio5_cc85_2070", "WC_bio7_cc85_2070", "WC_bio12_cc85_2070", "WC_bio15_cc85_2070") , equalarea=FALSE, rasterstack=TRUE)
+he.90.85.t <- load_layers( layercodes = c("WC_bio1_he85_2070", "WC_bio5_he85_2070", "WC_bio7_he85_2070", "WC_bio12_he85_2070", "WC_bio15_he85_2070") , equalarea=FALSE, rasterstack=TRUE)
 
-t.90.85 <- overlay(mr.90.85.t, cc.90.85.t, fun=mean)
+t.90.85 <- overlay(mr.90.85.t, cc.90.85.t, he.90.85.t, fun=mean)
 
 o.90.85 <- load_layers( layercodes = c("BO2_RCP85_2100_salinityrange_bdmin", "BO2_RCP85_2100_salinitymean_bdmin", "BO2_RCP85_2100_temprange_bdmin", "BO2_RCP85_2100_tempmean_bdmin") , equalarea=FALSE, rasterstack=TRUE)
 chl.90.85 <- load_layers("BO2_RCP85_2100_chlomean_bdmin")
